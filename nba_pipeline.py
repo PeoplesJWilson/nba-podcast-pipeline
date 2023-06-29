@@ -99,6 +99,14 @@ def nba_pipeline():
 
     @task()
     def download_episodes(metadata):
+
+        podcast_name = metadata[0][2]
+        podcast_name = podcast_name.replace(' ','_')
+        podcast_path = os.path.join("episodes",podcast_name)
+        if not os.path.exists(podcast_path):
+            os.makedirs(podcast_path)
+            print(f"created directory for podcast {podcast_name}")
+
         num_downloaded = 0
         download_queue = [(row[0],row[1],row[2],row[3]) for row in sorted(metadata, key = lambda row: row[3], reverse = True)]
 
