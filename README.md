@@ -4,7 +4,10 @@ This README contains instructions on how to setup a data pipeline using airflow 
 - saves podcast metadata to an sqlite database.
 - saves podcast audio to local directory.
   
-This project is a piece of a larger project which attempts to use nba podcaster sentiment, along with nba stats, to predict the outcome of games. This larger project is coming soon.
+This project is a piece of a larger project which attempts to use nba podcaster sentiment, along with nba stats, to predict the outcome of games. This larger project is coming soon. The episodes downloaded with this dag come from podcasts "the bill simmons podcast" and "the ringer nba show." The graph representation of the DAG resulting from this project is shown below.
+
+![dag_diagram](dag_diagram.png)
+
 ## Instructions
 - Create a root directory for this project, and follow the instructions found [here](https://towardsdatascience.com/an-introduction-to-apache-airflow-21111bf98c1f) to install airflow within a virtual environment
 - Navigate to the airflow folder resulting from the previous step, run the linux command "mkdir dags" to create a folder which will contain the pipeline
